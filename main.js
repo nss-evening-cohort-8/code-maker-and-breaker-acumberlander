@@ -17,15 +17,13 @@ const secretToConvert = document.getElementById("secretToConvert").value;
 const messageToSecretConverter = () => {
     let messageToConvert = document.getElementById("messageToConvert").value;
     let messageArray = messageToConvert.split("");
-    // let index = 4;
+    let secretMessageArray = [];
     for (i = 0; i < messageToConvert.length; i++) {
-        messageArray.push([i]);
-        // for (j = 0; j < messageArray.length; j++) {
-        //     i.charCodeAt([j]);
-        // }
+        let secretCode = messageArray[i].charCodeAt();
+        secretMessageArray.push(secretCode);
     }
 
-    printToDom(messageArray, 'convertedMessage');
+    printToDom(secretMessageArray, 'convertedMessage');
 }
 
 convertToSecret.addEventListener('click', (e) => {
