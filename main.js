@@ -22,7 +22,18 @@ const messageToSecretConverter = () => {
         let secretCode = messageArray[i].charCodeAt();
         secretMessageArray.push(secretCode);
     }
+    printToDom(secretMessageArray, 'convertedMessage');
+}
 
+// function that converts secret to message
+const messageToSecretConverter = () => {
+    let messageToConvert = document.getElementById("messageToConvert").value;
+    let messageArray = messageToConvert.split("");
+    let secretMessageArray = [];
+    for (i = 0; i < messageToConvert.length; i++) {
+        let secretCode = messageArray[i].charCodeAt();
+        secretMessageArray.push(secretCode);
+    }
     printToDom(secretMessageArray, 'convertedMessage');
 }
 
