@@ -7,3 +7,7 @@ const printToDom = (stringToPrint, whereToPrint) => {
 // Buttons
 const convertToSecret = document.getElementById("convertToSecret");
 const convertToMessage = document.getElementById("convertToMessage");
+
+//input fields
+const secretToConvert = document.getElementById("secretToConvert");
+const messageToConvert = document.getElementById("messageToConvert");
