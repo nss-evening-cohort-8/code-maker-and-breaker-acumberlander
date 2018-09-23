@@ -15,7 +15,6 @@ const secretToMessageConverter = () => {
     let message = '';
     for (i = 0; i < secretToConvert.length; i++) {
         message += String.fromCharCode(secretArray[i]);
-        // messageArray.join('');
     }
     printToDom(message, 'convertedSecret');
 }
