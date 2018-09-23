@@ -10,7 +10,7 @@ const convertToMessage = document.getElementById("convertToMessage");
 
 //input fields
 // const messageToConvert = document.getElementById("messageToConvert").value;
-const secretToConvert = document.getElementById("secretToConvert").value;
+// const secretToConvert = document.getElementById("secretToConvert").value;
 
 
 // function that converts message to secret
@@ -24,21 +24,9 @@ const messageToSecretConverter = () => {
     }
     printToDom(secretMessageArray, 'convertedMessage');
 }
-
-// function that converts secret to message
-const messageToSecretConverter = () => {
-    let messageToConvert = document.getElementById("messageToConvert").value;
-    let messageArray = messageToConvert.split("");
-    let secretMessageArray = [];
-    for (i = 0; i < messageToConvert.length; i++) {
-        let secretCode = messageArray[i].charCodeAt();
-        secretMessageArray.push(secretCode);
-    }
-    printToDom(secretMessageArray, 'convertedMessage');
-}
-
+// EventListener that will run the messageToSecretConverter function
 convertToSecret.addEventListener('click', (e) => {
     e.preventDefault();
     messageToSecretConverter();
 });
-// let messageArray = messageToConvert.split("");
+
