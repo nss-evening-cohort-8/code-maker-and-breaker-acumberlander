@@ -5,6 +5,7 @@ const printToDom = (stringToPrint, whereToPrint) => {
 
 // Buttons
 const convertToSecret = document.getElementById("convertToSecret");
+const convertToMessage = document.getElementById("convertToMessage");
 
 // function that converts message to secret
 const messageToSecretConverter = () => {
@@ -15,13 +16,29 @@ const messageToSecretConverter = () => {
         let secretCode = messageArray[i].charCodeAt();
         secretMessageArray.push(secretCode);
     }
-
     printToDom(secretMessageArray, 'convertedMessage');
+}
+
+// function that converts secret to message
+const secretToMessageConverter = () => {
+    let secretToConvert = document.getElementById("secretToConvert").value;
+    let secretArray = secretToConvert.split(",");
+    let message = '';
+    for (i = 0; i < secretToConvert.length; i++) {
+        message += String.fromCharCode(secretArray[i]);
+    }
+    printToDom(message, 'convertedSecret');
 }
 
 // EventListener that will run the messageToSecretConverter function
 convertToSecret.addEventListener('click', (e) => {
     e.preventDefault();
     messageToSecretConverter();
+});
+
+// EventListener that will run the secretToMessageConverter function
+convertToMessage.addEventListener('click', (e) => {
+    e.preventDefault();
+    secretToMessageConverter();
 });
 
